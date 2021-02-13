@@ -50,20 +50,6 @@ const Container = styled.div`
   align-items: center;
 `
 
-const ContainerTexts = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8rem;
-  a {
-    color: #13c1b5;
-    margin-left: 2rem;
-    margin-bottom: 0;
-
-  }
-`
-
 const ImgContainer = styled.div`
   display: flex;
   justify-content: space-between;

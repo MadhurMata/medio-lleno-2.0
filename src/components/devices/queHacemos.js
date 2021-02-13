@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import QueHacemosCardsList from "../shared/queHacemosCardsList"
-import WaveAndText from "./waveAndText"
+import WaveAndText from "../waveAndText"
 import WaveImage from "../img-components/waveImage"
 
 const Desktop = styled.div`

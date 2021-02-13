@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled from "@emotion/styled"
-import WaveImage from '../img-components/waveImage'
+import WaveImage from './img-components/waveImage'
 
 const HorizontalFlex = styled.div`
   display: flex;

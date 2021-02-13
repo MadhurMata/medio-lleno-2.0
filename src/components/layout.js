@@ -1,17 +1,13 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
-import PropTypes from "prop-types"
-
+import React, { useState, createContext } from "react"
 import Header from "./shared/header"
 import "./layout.css"
 import styled from "@emotion/styled"
 import Footer from "./shared/footer"
+
+export const PagesStateContext = createContext({
+  pages: "home",
+  setPages: () => {}
+})
 
 const Wrapper = styled.div`
     @media only screen
@@ -20,20 +16,33 @@ const Wrapper = styled.div`
   }
 `
 
-
 const Layout = ({closeHeader, children }) => {
+  const [pages, setPages] = useState('home')
+  const value = { pages, setPages }
+
+  // function togglePage(redirectTo) {
+  //   console.log('toggle function redirect to: ', redirectTo)
+  //   let page;
+  //   for(page in this.pages) {
+  //     if(page === redirectTo) {
+  //       pages[page] = true
+  //     } else {
+  //       pages[page] = false
+  //     }
+  //   }
+  //   setPages(pages)
+  // }
+
 
   return (
-    <Wrapper>
-      <Header closeHeader={closeHeader}/>
-      <main>{children}</main>
-      <Footer/>
-    </Wrapper>
+    <PagesStateContext.Provider value={value}>
+      <Wrapper>
+        <Header closeHeader={closeHeader}/>
+        <main pages={pages}>{children}</main>
+        <Footer/>
+      </Wrapper> 
+    </PagesStateContext.Provider>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

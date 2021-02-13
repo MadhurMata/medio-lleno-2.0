@@ -102,6 +102,8 @@ export default function ProcessCardList() {
         setSeguimiento(!isSeguimientoActive)
         setSeguimientoVisivility(!seguimientoVisivility)
         break
+      default: 
+        break
     }
   }
 

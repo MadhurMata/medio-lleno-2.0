@@ -1,20 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import WaveImage from '../img-components/waveImage'
 import WaveAndText from "../waveAndText"
-
-const Desktop = styled.div`
-  @media only screen and (max-device-width: 999px) {
-    display: none;
-  }
-`
-const Devices = styled.div`
-  @media only screen and (min-device-width: 1000px) {
-    display: none;
-  }
-`
+import { PagesStateContext } from '../layout'
 
 const Wrapper = styled.div`
   width: 900px;
@@ -42,22 +31,8 @@ const Title = styled.h1`
   font-family: 'Futura-bold', Fallback, sans-serif;
 `
 
-const Text = styled.p`
-margin-top: 1rem;
-font-size 0.8rem;
-color: white;
-text-align: left;
-width: 100%;
-`
-
-const CenteredWave = styled.div`
-  width: 100%;
-  display flex;
-  justify-content: center;
-  margin: 2rem 0;
-`
-
-export default function Model() {
+export default function ModelEscritorio() {
+  const { pages } = useContext(PagesStateContext)
   const text = 'Invertimos el flujo de la inversion para crear un valor de atracción central (VAC). Capaz de atraer al entorno que rodea a una marca y aumentar su impacto y valoración.'
   const title = 'Modelo de Atracción Central'
   const query = useStaticQuery(graphql`
@@ -76,20 +51,7 @@ export default function Model() {
     }
   `)
   
-  return (
-    <div name={"model"}>
-      <Devices>
-        <Title>{title}</Title>
-        <Img
-            style={{ width: "100%", height: "auto", overflow: "inherit" }}
-            fluid={query.modelImg.nodes[0].childImageSharp.fluid}
-            alt=" Gráfico del modelo de atracción central"/>
-        <Text>{text}</Text>
-        <CenteredWave>
-          <WaveImage width={"45%"}></WaveImage>
-        </CenteredWave>
-      </Devices>
-      <Desktop>
+  return pages === 'modelo' ? (
         <Wrapper>
           <TextContainer>
             <Title>{title}</Title>
@@ -101,7 +63,5 @@ export default function Model() {
             alt="Modelo de atracción central"
           />
         </Wrapper>
-      </Desktop>
-    </div>
-  )
+      ) : null
 }

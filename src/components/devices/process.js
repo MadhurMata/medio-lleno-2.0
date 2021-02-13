@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "@emotion/styled"
 import ProcessCardList from '../shared/processCardsList'
 import WaveImage from '../img-components/waveImage'
-import WaveAndText from './waveAndText'
+import WaveAndText from '../waveAndText'
 
 const Desktop = styled.div`
   @media only screen and (max-device-width: 999px) {
