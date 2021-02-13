@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4rem;
   margin-top: 20%;
   @media only screen and (max-device-width: 999px) {
     display: none;
