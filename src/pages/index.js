@@ -20,7 +20,6 @@ const Desktop = styled.div`
   justify-content: center;
   align-item: center;
   height: 100vh;
-  margin: 6rem 0 4rem;
 
   @media only screen and (max-device-width: 999px) {
     display: none;
