@@ -3,43 +3,12 @@ import data from "../../metadata/contact"
 import styled from "@emotion/styled"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import WaveImage from '../img-components/waveImage'
-
-const Desktop = styled.div`
-  @media only screen and (max-device-width: 999px) {
-    display: none;
-  }
-`
-const Devices = styled.div`
-  @media only screen and (min-device-width: 1000px) {
-    display: none;
-  }
-`
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-const Wrapper = styled.div`
-  width: 900px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4rem;
-  margin-top: 20%;
-  @media only screen and (max-device-width: 999px) {
-    display: none;
-  }
-`
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
 `
 
 const Title = styled.h1`
@@ -86,23 +55,6 @@ margin: 0;
   }
 `
 
-const HorizontalFlex = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 560px;
-  width: 100%;
-  margin: 0;
-  p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: white;
-    line-height: 1.4rem;
-  }
-  
-`
-
 const Contact = () => {
   const query = useStaticQuery(graphql`
     query {
@@ -123,46 +75,20 @@ const Contact = () => {
     }
   `)
   return (
-    <>
-      <Devices>
-        <Container style={{marginBottom: "2rem"}}>
-          <Title id={"contact"} name={"contact"}>{data.contact.text}</Title>
-          <Img
-            style={{ margin: "2rem 0", width: "100%", height: "auto" }}
-            fluid={query.contactImg.nodes[0].childImageSharp.fluid}
-            alt="E.T. image"
-          />
-          <Subtitle>{data.contact.telephoneNumber}</Subtitle>
-          <Subtitle>{data.contact.email}</Subtitle>
-          <Adress>{data.contact.adressFirstLine}</Adress>
-          <Adress>{data.contact.adressSecondLine}</Adress>
-        </Container>
-      </Devices>
-      <Desktop>
-        <Wrapper>
-          <TextContainer>
-            <Title>{data.contact.text}</Title>
-            <HorizontalFlex>
-              <WaveImage width={"35%"}></WaveImage>
-              <div>
-                <Link href="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
-                  <Subtitle>{data.contact.email}</Subtitle>
-                </Link>
-                <Link style={{textDecoration:"none"}} to={"https://www.google.es/maps/place/Calle+del+Cerro+Minguete,+112,+28035+Madrid,+Spain/@40.4869974,-3.725528,17z/data=!3m1!4b1!4m5!3m4!1s0xd4229f3348a3bab:0x52ab31dbc691f8ed!8m2!3d40.4869933!4d-3.7233393"}>
-                  <Adress>{data.contact.adressFirstLine}</Adress>
-                  <Adress>{data.contact.adressSecondLine}</Adress>
-                </Link>
-              </div>
-            </HorizontalFlex>
-          </TextContainer>
-          <Img
-            style={{ width: "350px", height: "auto", overflow: "inherit" }}
-            fluid={query.contactImg.nodes[0].childImageSharp.fluid}
-            alt="Modelo de atracción central"
-          />
-        </Wrapper>
-      </Desktop>
-      </>
+    <Container style={{ marginBottom: "2rem" }}>
+      <Title id={"contact"} name={"contact"}>
+        {data.contact.text}
+      </Title>
+      <Img
+        style={{ margin: "2rem 0", width: "100%", height: "auto" }}
+        fluid={query.contactImg.nodes[0].childImageSharp.fluid}
+        alt="E.T. image"
+      />
+      <Subtitle>{data.contact.telephoneNumber}</Subtitle>
+      <Subtitle>{data.contact.email}</Subtitle>
+      <Adress>{data.contact.adressFirstLine}</Adress>
+      <Adress>{data.contact.adressSecondLine}</Adress>
+    </Container>
   )
 }
 
