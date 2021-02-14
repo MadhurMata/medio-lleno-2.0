@@ -5,38 +5,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import WaveImage from '../img-components/waveImage'
 import { PagesStateContext } from '../layout'
-
-const Wrapper = styled.div`
-  width: 900px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20%;
-  @media only screen and (max-device-width: 999px) {
-    display: none;
-  }
-`
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-`
-
-const Title = styled.h1`
-  color: white;
-  font-family: 'Futura-bold', Fallback, sans-serif;
-  font-size 1.6rem;
-  font-weight: 550;
-  text-align: left;
-  width: 100%;
-
-  @media only screen 
-  and (min-device-width: 1000px) {
-      font-size: 2.5rem;    
-  }
-`
+import { Title, Wrapper, TextContainer } from "../../styles/styles"
 
 const Subtitle = styled.h1`
   color: white;

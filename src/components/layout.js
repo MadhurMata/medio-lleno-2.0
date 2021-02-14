@@ -10,10 +10,6 @@ export const PagesStateContext = createContext({
 })
 
 const Wrapper = styled.div`
-    @media only screen
-  and (min-device-width: 1800px) {
-    max-width: 1800px;
-  }
 `
 
 const Layout = ({closeHeader, children }) => {

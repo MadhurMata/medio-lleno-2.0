@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styled from "@emotion/styled"
 import WaveAndText from '../waveAndText'
 
@@ -16,17 +15,6 @@ const MainMessage = styled.div`
         font-weight: 500;
         margin: 0;
     } 
-  
-  @media only screen 
-  and (min-device-width: 1000px) {
-    margin-top: 0;
-    h1 {
-      margin: 0;
-      font-family: 'Futura-bold', Fallback, sans-serif;
-      line-height: 4.8rem;
-      font-size: 4.6rem;
-    } 
-  }
 `
 
 export default function Home() {

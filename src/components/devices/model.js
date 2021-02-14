@@ -1,30 +1,8 @@
 import React from "react"
-import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import WaveImage from "../img-components/waveImage"
-
-const Title = styled.h1`
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 500;
-  font-family: "Futura-bold", Fallback, sans-serif;
-`
-
-const Text = styled.p`
-margin-top: 1rem;
-font-size 0.8rem;
-color: white;
-text-align: left;
-width: 100%;
-`
-
-const CenteredWave = styled.div`
-  width: 100%;
-  display flex;
-  justify-content: center;
-  margin: 2rem 0;
-`
+import { Title, Text, CenteredWave } from "../../styles/styles"
 
 export default function Model() {
   const text =
@@ -50,7 +28,7 @@ export default function Model() {
     <>
       <Title name={"model"}>{title}</Title>
       <Img
-        style={{ width: "100%", height: "auto", overflow: "inherit" }}
+        style={{ width: "100%", height: "auto", overflow: "inherit", marginBottom: "1rem" }}
         fluid={query.modelImg.nodes[0].childImageSharp.fluid}
         alt=" Gráfico del modelo de atracción central"
       />

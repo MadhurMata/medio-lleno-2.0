@@ -10,6 +10,7 @@ const Container = styled.div`
   justify-content: center;
   width: 900px;
   padding-left: 100px;
+  margin: 4rem;
 `
 
 const MainMessage = styled.div`

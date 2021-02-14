@@ -1,7 +1,7 @@
 import React from "react"
 import data from "../../metadata/contact"
 import styled from "@emotion/styled"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const Container = styled.div`
@@ -19,10 +19,6 @@ const Title = styled.h1`
   text-align: left;
   width: 100%;
 
-  @media only screen 
-  and (min-device-width: 1000px) {
-      font-size: 2.5rem;    
-  }
 `
 
 const Subtitle = styled.h1`

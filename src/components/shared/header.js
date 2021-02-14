@@ -120,7 +120,7 @@ const Header = ({ path }) => {
         <HeaderContainer>
           <Link to="/" style={{ textDecoration: `none` }}>
             <Img
-              style={{ width: "10rem", height: "5rem" }}
+              style={{ width: "7rem", height: "5rem" }}
               fluid={query.headerImg.nodes[0].childImageSharp.fluid}
               alt="Medio Lleno logo"
             />

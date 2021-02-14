@@ -23,7 +23,7 @@ const Card = styled.div`
     font-size: 0.7rem;
     line-height: initial;
     text-align: center;
-    width: 55%;
+    width: 60%;
   }
 `
 
@@ -65,7 +65,7 @@ const Percent = styled.div`
   display: flex;
   align-items: center;
   color: rgb(253, 227, 0);
-
+  margin-top: 0.8rem;
   h1 {
     font-size: 1.6rem;
     font-weight: 700;
