@@ -37,7 +37,7 @@ export const TextContainer = styled.div`
   justify-content: center;
   align-items: end;
   width: 500px;
-  min-width: 540px;
+  min-width: 550px;
 `
 
 // Devices

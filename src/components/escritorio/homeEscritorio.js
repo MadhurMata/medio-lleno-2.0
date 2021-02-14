@@ -36,12 +36,9 @@ export default function HomeEscritorio() {
   return pages === 'home' ? (
             <Container>
               <MainMessage>
-                <h1 style={{  lineHeight: "5.2rem",   marginTop: "20%"
-                }}>Bien hecho</h1>
+                <h1 style={{  lineHeight: "5.2rem", marginTop: "20%" }}>Bien hecho</h1>
                 <h1 style={{  lineHeight: "4.3rem"}}>es mejor que</h1>
                 <h1 style={{  lineHeight: "7.8rem"}}>bien dicho.</h1>
-                <div style={{  marginTop: "4rem"}}>
-                </div>
               </MainMessage>
               <WaveAndText width={"40%"} text={text}></WaveAndText>
             </Container>

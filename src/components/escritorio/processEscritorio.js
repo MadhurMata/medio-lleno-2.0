@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import WaveAndText from '../waveAndText'
 import { PagesStateContext } from '../layout'
-import ProcessCardListEscritorio from "./ProcessCardListEscritorio"
+import ProcessCardList from "../shared/processCardsList"
 import { Title, Wrapper, TextContainer } from "../../styles/styles"
 
 export default function ProcessEscritorio() {
@@ -15,7 +15,7 @@ export default function ProcessEscritorio() {
               <Title>{title}</Title>
               <WaveAndText width={"196px"} text={text}></WaveAndText>
             </TextContainer>
-            <ProcessCardListEscritorio></ProcessCardListEscritorio>
+            <ProcessCardList></ProcessCardList>
           </Wrapper>
       ) : null
 }

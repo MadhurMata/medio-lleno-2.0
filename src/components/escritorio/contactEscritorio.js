@@ -18,14 +18,14 @@ const Subtitle = styled.h1`
   margin: 0;
   @media only screen 
   and (min-device-width: 1000px) {
-      font-size: 1rem;
+      font-size: 0.8rem;
   line-height: 1.8rem;
   }
 `
 
 const Adress = styled.p`
   color: rgb(253,227,0);
-  font-size 0.7rem;
+  font-size 0.8rem;
   text-align: left;
   width: 100%;
   line-height: 1.3rem;
@@ -35,17 +35,21 @@ const Adress = styled.p`
 const HorizontalFlex = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   align-items: flex-start;
   max-width: 560px;
   width: 100%;
   margin: 0;
   p {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 500;
     line-height: 1.4rem;
   }
   
+`
+
+const Container = styled.div`
+  margin-left: 3rem;
 `
 
 export default function ContactEscritorio () {
@@ -75,7 +79,7 @@ export default function ContactEscritorio () {
           <Title>{data.contact.text}</Title>
           <HorizontalFlex>
             <WaveImage width={"35%"}></WaveImage>
-            <div>
+            <Container>
               <Link href="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
                 <Subtitle>{data.contact.email}</Subtitle>
               </Link>
@@ -83,11 +87,11 @@ export default function ContactEscritorio () {
                 <Adress>{data.contact.adressFirstLine}</Adress>
                 <Adress>{data.contact.adressSecondLine}</Adress>
               </Link>
-            </div>
+            </Container>
           </HorizontalFlex>
         </TextContainer>
         <Img
-          style={{ width: "350px", height: "auto", overflow: "inherit" }}
+          style={{ width: "350px", marginTop: "7rem", height: "auto", overflow: "inherit" }}
           fluid={query.contactImg.nodes[0].childImageSharp.fluid}
           alt="Modelo de atracción central"
         />

@@ -19,6 +19,10 @@ const CardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+
+  @media only screen and (min-device-width: 1000px) {
+    padding-left: 2rem;
+  }
 `
 
 const Card = styled.div`
@@ -28,9 +32,6 @@ const Card = styled.div`
   align-items: center;
   width: 50%;
   align-items: center;
-  @media only screen and (min-device-width: 1000px) {
-    width: 30%;
-  }
 `
 
 const TextCard = styled.div`
@@ -40,9 +41,6 @@ const TextCard = styled.div`
   line-height: initial;
   color: white;
   width: 50%;
-  @media only screen and (min-device-width: 1000px) {
-    width: 30%;
-  }
 `
 
 export default function ProcessCardList() {
