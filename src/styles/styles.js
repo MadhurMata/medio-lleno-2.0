@@ -54,6 +54,6 @@ export const CenteredWave = styled.div`
   width: 100%;
   display flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 3rem 0;
 `
 

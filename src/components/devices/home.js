@@ -7,6 +7,7 @@ const MainMessage = styled.div`
   align-items: start-end;
   flex-direction: column;
   color: white;
+  margin-bottom: 1rem;
      h1 {
         line-height: 3.3rem;
         font-size: 2.7rem;
@@ -28,16 +29,40 @@ const Container = styled.div`
   max-width: 500px;
 `
 
+const OnlyMobile = styled.div`
+  @media only screen and (min-device-width: 396px) and (max-device-width: 999px) {
+    display: none;
+  }
+`
+
+const BetweenDevices = styled.div`
+  @media only screen and (max-device-width: 395px) {
+    display: none;
+  }
+`
+
+
+
 export default function Home() {
   const text = 'Deberían ser los productos y servicios los que hablen de las marcas y no alrevés.';
   return (
       <Container>
-        <MainMessage>
-          <h1>Bien hecho</h1>
-          <h1>es mejor</h1>
-          <h1 style={{  lineHeight: "4.3rem"}}>que bien</h1>
-          <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1>
-        </MainMessage>
+        <BetweenDevices>
+          <MainMessage>
+            <h1>Bien hecho es</h1>
+            <h1>mejor que</h1>
+            <h1 style={{  lineHeight: "4.3rem"}}>bien dicho.</h1>
+            {/* <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1> */}
+          </MainMessage>
+        </BetweenDevices>
+        <OnlyMobile>
+          <MainMessage>
+            <h1>Bien hecho</h1>
+            <h1>es mejor</h1>
+            <h1 style={{  lineHeight: "4.3rem"}}>que bien</h1>
+            <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1>
+          </MainMessage>
+        </OnlyMobile>
         <WaveAndText width={"45%"} text={text}></WaveAndText>
       </Container>
   )

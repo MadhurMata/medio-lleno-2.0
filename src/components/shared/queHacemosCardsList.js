@@ -8,7 +8,10 @@ const CardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2rem;
+  
+  @media only screen and (min-device-width: 1000px) {
+    padding: 2rem;
+  }
 `
 
 const Card = styled.div`
@@ -16,7 +19,7 @@ const Card = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 45%;
+  width: 46%;
   align-items: center;
 
   p {

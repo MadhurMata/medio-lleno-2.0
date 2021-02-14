@@ -9,7 +9,7 @@ import { Link } from "react-scroll";
 const StyledMenu = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: -1rem;
   display: flex;
   justify-content: space-between;
   background: white;
@@ -17,11 +17,6 @@ const StyledMenu = styled.div`
   height: 8rem;
   transition: transform 0.3s ease-in-out;
   padding: 1rem;
-
-  @media  {
-    width: 100vw;
-  }
-  
 `
 
 const Nav = styled.nav`
