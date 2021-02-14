@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import styled from "@emotion/styled"
 import QueHacemosCardsList from "../shared/queHacemosCardsList"
 import WaveAndText from "../waveAndText"
 import { PagesStateContext } from '../layout'
@@ -14,7 +13,7 @@ export default function QueHacemosEscritorio() {
             <Wrapper>
               <TextContainer>
                 <Title>{title}</Title>
-                <WaveAndText width={"35%"} text={text}></WaveAndText>
+                <WaveAndText width={"31%"} text={text}></WaveAndText>
               </TextContainer>
               <QueHacemosCardsList></QueHacemosCardsList>
             </Wrapper>

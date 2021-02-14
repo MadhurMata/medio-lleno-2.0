@@ -19,7 +19,7 @@ const StyledMenu = styled.div`
   padding: 1rem;
 
   @media  {
-    width: 100%;
+    width: 100vw;
   }
   
 `

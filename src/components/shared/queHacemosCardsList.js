@@ -118,7 +118,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[0].childImageSharp.fluid}
+          fluid={query.queHasemosdImg.nodes[1].childImageSharp.fluid}
           alt="Icono de una pantalla ordenador con graficos"
         />
         <Percent>
@@ -137,7 +137,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[1].childImageSharp.fluid}
+          fluid={query.queHasemosdImg.nodes[0].childImageSharp.fluid}
           alt="Icono de una pantalla ordenador con graficos"
         />
         <Percent>
@@ -156,7 +156,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[2].childImageSharp.fluid}
+          fluid={query.queHasemosdImg.nodes[3].childImageSharp.fluid}
           alt="Icono de una pantalla ordenador con graficos"
         />
         <Percent>
@@ -175,7 +175,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[3].childImageSharp.fluid}
+          fluid={query.queHasemosdImg.nodes[2].childImageSharp.fluid}
           alt="Icono de una pantalla ordenador con graficos"
         />
         <Percent>

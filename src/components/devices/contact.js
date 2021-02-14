@@ -3,13 +3,8 @@ import data from "../../metadata/contact"
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { Container } from "../../styles/styles"
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
 
 const Title = styled.h1`
   color: white;

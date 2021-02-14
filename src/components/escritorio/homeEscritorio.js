@@ -22,6 +22,7 @@ const MainMessage = styled.div`
     h1 {
       margin: 0;
       font-family: 'Futura-bold', Fallback, sans-serif;
+      font-weight: 500;
       line-height: 4.8rem;
       font-size: 4.6rem;
     } 

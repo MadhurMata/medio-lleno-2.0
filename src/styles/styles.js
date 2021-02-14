@@ -35,8 +35,9 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   width: 500px;
+  min-width: 540px;
 `
 
 // Devices

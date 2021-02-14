@@ -29,10 +29,10 @@ export default function ModelEscritorio() {
         <Wrapper>
           <TextContainer>
             <Title>{title}</Title>
-            <WaveAndText width={"35%"} text={text}></WaveAndText>
+            <WaveAndText width={"31%"} text={text}></WaveAndText>
           </TextContainer>
           <Img
-            style={{ width: "350px", height: "auto", overflow: "inherit" }}
+            style={{ width: "400px", height: "auto", overflow: "inherit" }}
             fluid={query.modelImg.nodes[0].childImageSharp.fluid}
             alt="Modelo de atracción central"
           />

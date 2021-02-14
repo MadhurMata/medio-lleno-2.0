@@ -5,5 +5,5 @@ module.exports.contact = {
    //telephoneNumber: "+34 91 343 23 32",
   email: "info@mediolleno.es",
   adressFirstLine: "Calle Cerro Minguete 112,",
-  adressSecondLine: "28035, Madrid, España"
+  adressSecondLine: "28035, Madrid, España."
 }
