@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import WaveImage from "../img-components/waveImage"
-import { Title, Text, CenteredWave } from "../../styles/styles"
+import { Title, Text, CenteredWave, Container } from "../../styles/styles"
 
 export default function Model() {
   const text =
@@ -25,10 +25,10 @@ export default function Model() {
   `)
 
   return (
-    <>
+    <Container>
       <Title name={"model"}>{title}</Title>
       <Img
-        style={{ width: "100%", height: "auto", overflow: "inherit", marginBottom: "1rem" }}
+        style={{ width: "350px", height: "auto", overflow: "inherit", marginBottom: "1rem" }}
         fluid={query.modelImg.nodes[0].childImageSharp.fluid}
         alt=" Gráfico del modelo de atracción central"
       />
@@ -36,6 +36,6 @@ export default function Model() {
       <CenteredWave>
         <WaveImage width={"45%"}></WaveImage>
       </CenteredWave>
-    </>
+    </Container>
   )
 }

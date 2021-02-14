@@ -1,7 +1,7 @@
 import React from "react"
 import ProcessCardList from "../shared/processCardsList"
 import WaveImage from "../img-components/waveImage"
-import { Title, Text, CenteredWave } from "../../styles/styles"
+import { Title, Text, CenteredWave, Container } from "../../styles/styles"
 
 export default function Process() {
   const text =
@@ -9,13 +9,13 @@ export default function Process() {
   const title =
     "Nuestro proceso de trabajo se divide en 6 etapas independientes."
   return (
-    <>
+    <Container>
       <Title name={"process"}>{title}</Title>
       <ProcessCardList></ProcessCardList>
       <Text>{text}</Text>
       <CenteredWave>
         <WaveImage width={"45%"}></WaveImage>
       </CenteredWave>
-    </>
+    </Container>
   )
 }

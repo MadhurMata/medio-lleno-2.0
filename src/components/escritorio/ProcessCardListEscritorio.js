@@ -19,6 +19,7 @@ const CardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  max-width: 460px;
 `
 
 const Card = styled.div`

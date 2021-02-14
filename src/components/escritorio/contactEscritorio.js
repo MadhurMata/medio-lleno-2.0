@@ -24,17 +24,12 @@ const Subtitle = styled.h1`
 `
 
 const Adress = styled.p`
-color: #fde300;
-font-size 0.7rem;
-text-align: left;
-width: 100%;
-line-height: 1.3rem;
-margin: 0;
-@media only screen 
-  and (min-device-width: 1000px) {
-    line-height: 1.8rem;
-      font-size: 1rem;
-  }
+  color: rgb(253,227,0);
+  font-size 0.7rem;
+  text-align: left;
+  width: 100%;
+  line-height: 1.3rem;
+  margin: 0;
 `
 
 const HorizontalFlex = styled.div`
@@ -48,7 +43,6 @@ const HorizontalFlex = styled.div`
   p {
     font-size: 1.2rem;
     font-weight: 500;
-    color: white;
     line-height: 1.4rem;
   }
   

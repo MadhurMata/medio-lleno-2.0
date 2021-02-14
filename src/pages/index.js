@@ -32,7 +32,8 @@ const Devices = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  align-items: center;
+  
   @media only screen and (min-device-width: 1000px) {
     display: none;
   }

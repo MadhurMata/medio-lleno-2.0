@@ -18,7 +18,6 @@ const Title = styled.h1`
   font-weight: 550;
   text-align: left;
   width: 100%;
-
 `
 
 const Subtitle = styled.h1`
@@ -76,7 +75,7 @@ const Contact = () => {
         {data.contact.text}
       </Title>
       <Img
-        style={{ margin: "2rem 0", width: "100%", height: "auto" }}
+        style={{ margin: "2rem 0", maxWidth: "350px", width: "100%", height: "auto" }}
         fluid={query.contactImg.nodes[0].childImageSharp.fluid}
         alt="E.T. image"
       />

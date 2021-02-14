@@ -7,7 +7,6 @@ const MainMessage = styled.div`
   align-items: start-end;
   flex-direction: column;
   color: white;
-  margin-top: 50%;
      h1 {
         line-height: 3.3rem;
         font-size: 2.7rem;
@@ -17,10 +16,22 @@ const MainMessage = styled.div`
     } 
 `
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  margin-top: 20%;
+  min-height: 450px;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+`
+
 export default function Home() {
   const text = 'Deberían ser los productos y servicios los que hablen de las marcas y no alrevés.';
   return (
-      <div style={{ height: "100vh" }}>
+      <Container>
         <MainMessage>
           <h1>Bien hecho</h1>
           <h1>es mejor</h1>
@@ -28,6 +39,6 @@ export default function Home() {
           <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1>
         </MainMessage>
         <WaveAndText width={"45%"} text={text}></WaveAndText>
-      </div>
+      </Container>
   )
 }

@@ -11,7 +11,7 @@ export default function WaveImage(props) {
     ) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 196) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -21,7 +21,7 @@ export default function WaveImage(props) {
 `)   
 
   return <Img
-  style={{ width: props.width, height: "auto", overflow: "inherit" }}
+  style={{ width: props.width, maxWidth: "196px", height: "auto", overflow: "inherit" }}
   fluid={query.waveImg.nodes[0].childImageSharp.fluid}
   alt="Linea curva del logo"
 />

@@ -15,6 +15,14 @@ export const Title = styled.h1`
   }
 `
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+`
+
 // Desktop
 
 export const Wrapper = styled.div`
