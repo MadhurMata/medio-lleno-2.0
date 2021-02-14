@@ -16,6 +16,7 @@ const Desktop = styled.div`
   }
 `
 const Devices = styled.div`
+  padding-left: 1rem;
   @media only screen and (min-device-width: 1000px) {
     display: none;
   }

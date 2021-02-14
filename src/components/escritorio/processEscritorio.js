@@ -38,7 +38,7 @@ export default function ProcessEscritorio() {
           <Wrapper>
             <TextContainer>
               <Title>{title}</Title>
-              <WaveAndText text={text}></WaveAndText>
+              <WaveAndText width={"35%"} text={text}></WaveAndText>
             </TextContainer>
             <ProcessCardList></ProcessCardList>
           </Wrapper>

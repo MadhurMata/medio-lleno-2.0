@@ -20,20 +20,6 @@ const Layout = ({closeHeader, children }) => {
   const [pages, setPages] = useState('home')
   const value = { pages, setPages }
 
-  // function togglePage(redirectTo) {
-  //   console.log('toggle function redirect to: ', redirectTo)
-  //   let page;
-  //   for(page in this.pages) {
-  //     if(page === redirectTo) {
-  //       pages[page] = true
-  //     } else {
-  //       pages[page] = false
-  //     }
-  //   }
-  //   setPages(pages)
-  // }
-
-
   return (
     <PagesStateContext.Provider value={value}>
       <Wrapper>
