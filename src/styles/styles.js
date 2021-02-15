@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: ${props => props.marginTop || "17%"}
+  margin-top: ${props => props.marginTop}
 `
 export const TextContainer = styled.div`
   display: flex;
