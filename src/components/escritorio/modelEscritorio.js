@@ -26,10 +26,10 @@ export default function ModelEscritorio() {
   `)
   
   return pages === 'modelo' ? (
-        <Wrapper marginTop={ "17%" }>
+        <Wrapper marginTop={ "30vh" }>
           <TextContainer>
             <Title>{title}</Title>
-            <WaveAndText width={"30vh"} text={text}></WaveAndText>
+            <WaveAndText width={"31%"} text={text}></WaveAndText>
           </TextContainer>
           <Img
             style={{ width: "400px", height: "auto", overflow: "inherit" }}
