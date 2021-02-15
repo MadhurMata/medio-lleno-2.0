@@ -44,7 +44,7 @@ const BetweenDevices = styled.div`
 
 
 export default function Home() {
-  const text = 'Deberían ser los productos y servicios los que hablen de las marcas y no alrevés.';
+  const text = 'Deberían ser los productos y servicios los que hablen de las marcas y no al revés.';
   return (
       <Container>
         <BetweenDevices>

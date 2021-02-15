@@ -29,7 +29,7 @@ const MainMessage = styled.div`
 `
 
 export default function HomeEscritorio() {
-  const text = 'Deberían ser los productos y servicios los que hablen de las marcas y no alrevés.';
+  const text = 'Deberían ser los productos y servicios los que hablen de las marcas y no al revés.';
   const { pages } = useContext(PagesStateContext)
 
   return pages === 'home' ? (
