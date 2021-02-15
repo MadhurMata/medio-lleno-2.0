@@ -10,7 +10,7 @@ export default function ProcessEscritorio() {
   const title = 'Nuestro proceso de trabajo se divide en 6 etapas independientes.'
 
   return pages === 'proceso' ? (
-          <Wrapper>
+          <Wrapper marginTop={ "13%" }>
             <TextContainer>
               <Title>{title}</Title>
               <WaveAndText width={"196px"} text={text}></WaveAndText>

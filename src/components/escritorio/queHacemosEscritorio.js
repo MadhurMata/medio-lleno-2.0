@@ -10,7 +10,7 @@ export default function QueHacemosEscritorio() {
   const title = 'Desarrollamos productos y servicios como vehículos de comunicación en sí mismos.' 
 
   return pages === 'queHacemos' ? (
-            <Wrapper>
+            <Wrapper marginTop={ "17%" }>
               <TextContainer>
                 <Title>{title}</Title>
                 <WaveAndText width={"31%"} text={text}></WaveAndText>

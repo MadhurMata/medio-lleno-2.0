@@ -122,8 +122,8 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[3].childImageSharp.fluid}
-          alt="Icono de una pantalla ordenador con graficos"
+          fluid={query.queHasemosdImg.nodes[2].childImageSharp.fluid}
+          alt="Icono ojo y monedas"
         />
         <Percent>
           <Arrow direction={"rotate(135deg)"} marginTop={"0.6rem"}></Arrow>
@@ -141,8 +141,8 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[1].childImageSharp.fluid}
-          alt="Icono de una pantalla ordenador con graficos"
+          fluid={query.queHasemosdImg.nodes[3].childImageSharp.fluid}
+          alt="Icono de una mano y un documento "
         />
         <Percent>
           <Arrow direction={"rotate(-45deg)"} marginBottom={"0.5rem"}></Arrow>
@@ -161,7 +161,7 @@ export default function QueHacemosCardsList() {
         <Img
           style={{ width: "60px", height: "auto" }}
           fluid={query.queHasemosdImg.nodes[0].childImageSharp.fluid}
-          alt="Icono de una pantalla ordenador con graficos"
+          alt="Icono una persona con rorazones alrededor"
         />
         <Percent>
           <Arrow direction={"rotate(-45deg)"} marginBottom={"0.5rem"}></Arrow>
@@ -179,8 +179,8 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[2].childImageSharp.fluid}
-          alt="Icono de una pantalla ordenador con graficos"
+          fluid={query.queHasemosdImg.nodes[1].childImageSharp.fluid}
+          alt="Icono de un movil con notificaciones"
         />
         <Percent>
           <Arrow direction={"rotate(-45deg)"} marginBottom={"0.5rem"}></Arrow>

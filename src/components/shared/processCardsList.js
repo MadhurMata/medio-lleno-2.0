@@ -111,7 +111,7 @@ export default function ProcessCardList() {
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[0].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Monitor con gráficos"
         />
         <Subtitle>{data.methodology.stages[0].title}</Subtitle>
       </Card>
@@ -122,7 +122,7 @@ export default function ProcessCardList() {
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[1].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Pieza de ajedrez mostrando estrategia"
         />
         <Subtitle>{data.methodology.stages[1].title}</Subtitle>
       </Card>
@@ -136,7 +136,7 @@ export default function ProcessCardList() {
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[2].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Lapiz y una bombilla"
         />
         <Subtitle>{data.methodology.stages[2].title}</Subtitle>
       </Card>
@@ -150,7 +150,7 @@ export default function ProcessCardList() {
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[3].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Cinta de producción con paquetes y brazo mecánico"
         />
         <Subtitle>{data.methodology.stages[3].title}</Subtitle>
       </Card>
@@ -164,7 +164,7 @@ export default function ProcessCardList() {
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[4].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Coete espacial"
         />
         <Subtitle>{data.methodology.stages[4].title}</Subtitle>
       </Card>
@@ -178,7 +178,7 @@ export default function ProcessCardList() {
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[5].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Lupa y gráficos"
         />
         <Subtitle>{data.methodology.stages[5].title}</Subtitle>
       </Card>

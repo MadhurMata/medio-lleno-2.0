@@ -74,7 +74,7 @@ export default function ContactEscritorio () {
   `)
 
     return pages === 'contacto' ? (
-      <Wrapper>
+      <Wrapper marginTop={ "17%" }>
         <TextContainer>
           <Title>{data.contact.text}</Title>
           <HorizontalFlex>

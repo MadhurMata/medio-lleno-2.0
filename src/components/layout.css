@@ -29,13 +29,6 @@ body {
   background-color: #13c1b5;
   font-family: Futura, Fallback, sans-serif;
 }
-@media (min-width: 1800px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-}
 
 article,
 aside,
@@ -217,7 +210,6 @@ textarea {
 html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 * {
   box-sizing: inherit;

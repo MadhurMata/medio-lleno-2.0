@@ -26,7 +26,7 @@ export default function ModelEscritorio() {
   `)
   
   return pages === 'modelo' ? (
-        <Wrapper>
+        <Wrapper marginTop={ "17%" }>
           <TextContainer>
             <Title>{title}</Title>
             <WaveAndText width={"31%"} text={text}></WaveAndText>
