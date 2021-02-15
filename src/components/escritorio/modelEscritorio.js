@@ -29,7 +29,7 @@ export default function ModelEscritorio() {
         <Wrapper marginTop={ "17%" }>
           <TextContainer>
             <Title>{title}</Title>
-            <WaveAndText width={"31%"} text={text}></WaveAndText>
+            <WaveAndText width={"30vh"} text={text}></WaveAndText>
           </TextContainer>
           <Img
             style={{ width: "400px", height: "auto", overflow: "inherit" }}
