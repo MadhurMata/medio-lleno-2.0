@@ -90,10 +90,52 @@ const Percent = styled.div`
 export default function QueHacemosCardsList() {
   const query = useStaticQuery(graphql`
     query {
-      queHasemosdImg: allFile(
+      queHasemosdImg01: allFile(
         filter: {
           relativePath: {}
-          relativeDirectory: { eq: "images/queHacemos" }
+          relativeDirectory: { eq: "images/queHacemos/01" }
+        }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      queHasemosdImg02: allFile(
+        filter: {
+          relativePath: {}
+          relativeDirectory: { eq: "images/queHacemos/02" }
+        }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      queHasemosdImg03: allFile(
+        filter: {
+          relativePath: {}
+          relativeDirectory: { eq: "images/queHacemos/03" }
+        }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      queHasemosdImg04: allFile(
+        filter: {
+          relativePath: {}
+          relativeDirectory: { eq: "images/queHacemos/04" }
         }
       ) {
         nodes {
@@ -122,7 +164,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[2].childImageSharp.fluid}
+          fluid={query.queHasemosdImg01.nodes[0].childImageSharp.fluid}
           alt="Icono ojo y monedas"
         />
         <Percent>
@@ -141,7 +183,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[3].childImageSharp.fluid}
+          fluid={query.queHasemosdImg02.nodes[0].childImageSharp.fluid}
           alt="Icono de una mano y un documento "
         />
         <Percent>
@@ -160,7 +202,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[0].childImageSharp.fluid}
+          fluid={query.queHasemosdImg03.nodes[0].childImageSharp.fluid}
           alt="Icono una persona con rorazones alrededor"
         />
         <Percent>
@@ -179,7 +221,7 @@ export default function QueHacemosCardsList() {
       <Card>
         <Img
           style={{ width: "60px", height: "auto" }}
-          fluid={query.queHasemosdImg.nodes[1].childImageSharp.fluid}
+          fluid={query.queHasemosdImg04.nodes[0].childImageSharp.fluid}
           alt="Icono de un movil con notificaciones"
         />
         <Percent>
