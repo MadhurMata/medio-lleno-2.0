@@ -32,6 +32,7 @@ const Card = styled.div`
   align-items: center;
   width: 50%;
   align-items: center;
+  cursor: pointer;
 `
 
 const TextCard = styled.div`
@@ -76,28 +77,28 @@ export default function ProcessCardListEscritorio() {
   const showInfo = processPhase => {
     switch (processPhase) {
       case "analisis":
-        setAnalisis(!isAnalisisActive)
-        setAnalisisVisivility(!analisisVisivility)
+        isAnalisisActive ? setAnalisis(false) : setAnalisis(true)
+        isAnalisisActive ? setAnalisisVisivility(false) : setAnalisisVisivility(true)
         break
       case "estrategia":
-        setEstrategia(!isEstrategiaActive)
-        setestrategiaVisivility(!estrategiaVisivility)
+        isEstrategiaActive ? setEstrategia(false) : setEstrategia(true)
+        isEstrategiaActive ? setestrategiaVisivility(false) : setestrategiaVisivility(true)
         break
       case "desarrollo":
-        setDesarrollo(!isDesarrolloActive)
-        setdesarrolloVisivility(!desarrolloVisivility)
+        isDesarrolloActive ? setDesarrollo(false) : setDesarrollo(true)
+        isDesarrolloActive ? setdesarrolloVisivility(false) : setdesarrolloVisivility(true)
         break
       case "produccion":
-        setProduccion(!isProduccionActive)
-        setProduccionVisivility(!produccionVisivility)
+        isProduccionActive ? setProduccion(false) : setProduccion(true)
+        isProduccionActive ? setProduccionVisivility(false) : setProduccionVisivility(true)
         break
       case "lanzamiento":
-        setLanzamiento(!isLanzamientoActive)
-        setLanzamientoVisivility(!lanzamientoVisivility)
+        isLanzamientoActive ? setLanzamiento(false) : setLanzamiento(true)
+        isLanzamientoActive ? setLanzamientoVisivility(false) : setLanzamientoVisivility(true)
         break
       case "seguimiento":
-        setSeguimiento(!isSeguimientoActive)
-        setSeguimientoVisivility(!seguimientoVisivility)
+        isSeguimientoActive ? setSeguimiento(false) : setSeguimiento(true)
+        isSeguimientoActive ? setSeguimientoVisivility(false) : setSeguimientoVisivility(true)
         break
       default:
         break

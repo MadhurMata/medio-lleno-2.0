@@ -47,10 +47,10 @@ const ListElement = styled.li`
   text-decoration: none;
   font-size: 0.8rem;
   margin-right: 2rem;
-  border-bottom: ${props => props.active ? "3px #fde300 solid" : "none"};
-  font-weight: ${props => props.active ? "700" : "normal"};
-  &:hover {
-    border-bottom: ${props => props.active ?  "3px #fde300 solid": "3px #fde300 dashed"};
+  border-bottom: ${ props => !props.hover &&  props.active ? "3px #fde300 solid" : "none"  };
+  font-weight: ${  props => !props.hover && props.active ? "700" : "normal" };
+  &:hover  {
+    border-bottom: ${ props => props.active ?  "3px #fde300 solid": "3px #fde300 solid" };
     font-weight: 700;
   }
 `
@@ -58,7 +58,9 @@ const ListElement = styled.li`
 const Header = ({ path }) => {
   const node = useRef()
   const [open, setOpen] = useState(false)
+  const [notHovered, setNotHovered] = useState(false)
   const { setPages, pages } = useContext(PagesStateContext)
+  const [active, setActive] = useState(pages);
 
   const handleClickOutside = e => {
     if (node.current.contains(e.target)) {
@@ -81,6 +83,16 @@ const Header = ({ path }) => {
     }
   }, [open])
 
+  const setHover = (page) => {
+    setNotHovered(!notHovered)
+  }
+
+
+  const handleOnClick = (page) => {
+    setPages(page)
+    setActive(page)
+  }
+
   const query = useStaticQuery(graphql`
     query {
       headerImg: allFile(
@@ -96,7 +108,7 @@ const Header = ({ path }) => {
       }
     }
   `)
-  console.log(pages)
+  console.log('hovered', notHovered)
   return (
     <>
       <Devices>
@@ -128,11 +140,11 @@ const Header = ({ path }) => {
             />
           </Link>
           <NavBar>
-            <ListElement active={pages === 'home'} onKeyDown={() => setPages("home")} onClick={() => setPages("home")}>Home</ListElement>
-            <ListElement active={pages === 'queHacemos'} onKeyDown={() => setPages("queHacemos")} onClick={() => setPages("queHacemos")}>¿Qué hacemos?</ListElement>
-            <ListElement active={pages === 'modelo'} onKeyDown={() => setPages("modelo")} onClick={() => setPages( "modelo")}>Nuestro modelo</ListElement>
-            <ListElement active={pages === 'proceso'} onKeyDown={() => setPages("proceso")} onClick={() => setPages( "proceso")}>Nuestro proceso</ListElement>
-            <ListElement active={pages === 'contacto'} onKeyDown={() => setPages("contacto")} onClick={() => setPages( "contacto")}>Contacto</ListElement>
+            <ListElement onMouseEnter={() => setNotHovered(true)} onMouseLeave={() => setNotHovered(false)} hover={notHovered} desactive={notHovered} active={active === 'home'} onKeyDown={() => setPages("home")} onClick={() => handleOnClick("home")}>Home</ListElement>
+            <ListElement onMouseEnter={() => setNotHovered(true)} onMouseLeave={() => setNotHovered(false)} hover={notHovered} active={active === 'queHacemos'} onKeyDown={() => setPages("queHacemos")} onClick={() => handleOnClick("queHacemos")}>¿Qué hacemos?</ListElement>
+            <ListElement onMouseEnter={() => setNotHovered(true)} onMouseLeave={() => setNotHovered(false)} hover={notHovered} active={active === 'modelo'} onKeyDown={() => setPages("modelo")} onClick={() => handleOnClick( "modelo")}>Nuestro modelo</ListElement>
+            <ListElement onMouseEnter={() => setNotHovered(true)} onMouseLeave={() => setNotHovered(false)} hover={notHovered} active={active === 'proceso'} onKeyDown={() => setPages("proceso")} onClick={() => handleOnClick( "proceso")}>Nuestro proceso</ListElement>
+            <ListElement onMouseEnter={() => setNotHovered(true)} onMouseLeave={() => setNotHovered(false)} hover={notHovered} active={active === 'contacto'} onKeyDown={() => setPages("contacto")} onClick={() => handleOnClick( "contacto")}>Contacto</ListElement>
           </NavBar>
         </HeaderContainer>
       </Desktop> 

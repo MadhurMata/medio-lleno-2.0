@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "@emotion/styled"
 import WaveImage from '../img-components/waveImage'
-import {Text } from "../../styles/styles"
+import { Text } from "../../styles/styles"
 
 
 const MainMessage = styled.div`
