@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from "@emotion/styled"
-import WaveAndText from '../waveAndText'
+import WaveImage from '../img-components/waveImage'
+import {Text } from "../../styles/styles"
+
 
 const MainMessage = styled.div`
   display: flex;
@@ -40,7 +42,23 @@ const BetweenDevices = styled.div`
     display: none;
   }
 `
+const HorizontalFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 2rem;
+  max-width: 560px;
+  margin: 0;
+  p {
+    width: 52%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1.4rem;
+    margin-left: 1rem;
+  }
 
+`
 
 
 export default function Home() {
@@ -52,7 +70,6 @@ export default function Home() {
             <h1>Bien hecho es</h1>
             <h1>mejor que</h1>
             <h1 style={{  lineHeight: "4.3rem"}}>bien dicho.</h1>
-            {/* <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1> */}
           </MainMessage>
         </BetweenDevices>
         <OnlyMobile>
@@ -63,7 +80,10 @@ export default function Home() {
             <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1>
           </MainMessage>
         </OnlyMobile>
-        <WaveAndText width={"45%"} text={text}></WaveAndText>
+        <HorizontalFlex>
+          <WaveImage width={"45%"}></WaveImage>
+          <Text>{text}</Text>
+        </HorizontalFlex>
       </Container>
   )
 }

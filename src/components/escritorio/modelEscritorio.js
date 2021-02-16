@@ -8,7 +8,7 @@ import { Title, Wrapper, TextContainer } from "../../styles/styles"
 export default function ModelEscritorio() {
   const { pages } = useContext(PagesStateContext)
   const text = 'Invertimos el flujo de la inversion para crear un valor de atracción central (VAC). Capaz de atraer al entorno que rodea a una marca y aumentar su impacto y valoración.'
-  const title = 'Modelo de Atracción Central'
+  const title = 'Modelo de Atracción Central.'
   const query = useStaticQuery(graphql`
     query {
       modelImg: allFile(

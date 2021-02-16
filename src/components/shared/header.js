@@ -38,26 +38,27 @@ const NavBar = styled.ul`
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
-  width: 620px;
+  width: 640px;
   margin-top: 50px;
+`
 
-  li {
-    color: white;
-    text-decoration: none;
-    font-size: 0.8rem;
-    margin-right: 2rem;
-
-    &:hover {
-      border-bottom: 3px #fde300 solid;
-      font-weight: 700;
-    }
+const ListElement = styled.li`
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-right: 2rem;
+  border-bottom: ${props => props.active ? "3px #fde300 solid" : "none"};
+  font-weight: ${props => props.active ? "700" : "normal"};
+  &:hover {
+    border-bottom: ${props => props.active ?  "3px #fde300 solid": "3px #fde300 dashed"};
+    font-weight: 700;
   }
 `
 
 const Header = ({ path }) => {
   const node = useRef()
   const [open, setOpen] = useState(false)
-  const { setPages } = useContext(PagesStateContext)
+  const { setPages, pages } = useContext(PagesStateContext)
 
   const handleClickOutside = e => {
     if (node.current.contains(e.target)) {
@@ -95,6 +96,7 @@ const Header = ({ path }) => {
       }
     }
   `)
+  console.log(pages)
   return (
     <>
       <Devices>
@@ -126,11 +128,11 @@ const Header = ({ path }) => {
             />
           </Link>
           <NavBar>
-            <li onKeyDown={() => setPages("home")} onClick={() => setPages("home")}>Home</li>
-            <li onKeyDown={() => setPages("queHacemos")} onClick={() => setPages("queHacemos")}>¿Qué hacemos?</li>
-            <li onKeyDown={() => setPages("modelo")} onClick={() => setPages( "modelo")}>Nuestro modelo</li>
-            <li onKeyDown={() => setPages("proceso")} onClick={() => setPages( "proceso")}>Nuestro proceso</li>
-            <li onKeyDown={() => setPages("contacto")} onClick={() => setPages( "contacto")}>Contacto</li>
+            <ListElement active={pages === 'home'} onKeyDown={() => setPages("home")} onClick={() => setPages("home")}>Home</ListElement>
+            <ListElement active={pages === 'queHacemos'} onKeyDown={() => setPages("queHacemos")} onClick={() => setPages("queHacemos")}>¿Qué hacemos?</ListElement>
+            <ListElement active={pages === 'modelo'} onKeyDown={() => setPages("modelo")} onClick={() => setPages( "modelo")}>Nuestro modelo</ListElement>
+            <ListElement active={pages === 'proceso'} onKeyDown={() => setPages("proceso")} onClick={() => setPages( "proceso")}>Nuestro proceso</ListElement>
+            <ListElement active={pages === 'contacto'} onKeyDown={() => setPages("contacto")} onClick={() => setPages( "contacto")}>Contacto</ListElement>
           </NavBar>
         </HeaderContainer>
       </Desktop> 

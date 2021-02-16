@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
@@ -9,8 +9,8 @@ const Subtitle = styled.h1`
   font-size 0.8rem;
   font-family: 'Futura-bold', Fallback, sans-serif;
   font-weight: 500;
-  margin: 1rem 0;
-  text-align: left;
+  margin: 1rem 0 2rem;
+  text-align: center;
   width: 100%;
 `
 
@@ -19,26 +19,43 @@ const CardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 460px;
+
+  @media only screen and (min-device-width: 1000px) {
+    padding-left: 2rem;
+  }
 `
 
 const Card = styled.div`
+  display: ${props => (props.display ? "none" : "flex")};
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 30%;
-  max-width: 140px;
+  width: 50%;
   align-items: center;
 `
 
-const TextCard = styled.p`
-  text-align: left;
-  font-size 0.7rem;
+const TextCard = styled.div`
+  display: ${props => (props.display ? "none" : "flex")};
+  text-align: center;
+  font-size 0.8rem;
   line-height: initial;
   color: white;
+  width: 50%;
 `
 
-export default function ProcessCardList() {
+export default function ProcessCardListEscritorio() {
+  const [isAnalisisActive, setAnalisis] = useState(false)
+  const [analisisVisivility, setAnalisisVisivility] = useState(false)
+  const [isEstrategiaActive, setEstrategia] = useState(false)
+  const [estrategiaVisivility, setestrategiaVisivility] = useState(false)
+  const [isDesarrolloActive, setDesarrollo] = useState(false)
+  const [desarrolloVisivility, setdesarrolloVisivility] = useState(false)
+  const [isProduccionActive, setProduccion] = useState(false)
+  const [produccionVisivility, setProduccionVisivility] = useState(false)
+  const [isLanzamientoActive, setLanzamiento] = useState(false)
+  const [lanzamientoVisivility, setLanzamientoVisivility] = useState(false)
+  const [isSeguimientoActive, setSeguimiento] = useState(false)
+  const [seguimientoVisivility, setSeguimientoVisivility] = useState(false)
 
   const query = useStaticQuery(graphql`
     query {
@@ -56,62 +73,129 @@ export default function ProcessCardList() {
     }
   `)
 
+  const showInfo = processPhase => {
+    switch (processPhase) {
+      case "analisis":
+        setAnalisis(!isAnalisisActive)
+        setAnalisisVisivility(!analisisVisivility)
+        break
+      case "estrategia":
+        setEstrategia(!isEstrategiaActive)
+        setestrategiaVisivility(!estrategiaVisivility)
+        break
+      case "desarrollo":
+        setDesarrollo(!isDesarrolloActive)
+        setdesarrolloVisivility(!desarrolloVisivility)
+        break
+      case "produccion":
+        setProduccion(!isProduccionActive)
+        setProduccionVisivility(!produccionVisivility)
+        break
+      case "lanzamiento":
+        setLanzamiento(!isLanzamientoActive)
+        setLanzamientoVisivility(!lanzamientoVisivility)
+        break
+      case "seguimiento":
+        setSeguimiento(!isSeguimientoActive)
+        setSeguimientoVisivility(!seguimientoVisivility)
+        break
+      default:
+        break
+    }
+  }
+
   return (
     <CardsContainer>
-      <Card>
+      <Card
+        onMouseEnter={() => showInfo("analisis")}
+        onMouseLeave={() => showInfo("analisis")}
+        display={estrategiaVisivility}
+      >
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[0].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Monitor con gráficos"
         />
         <Subtitle>{data.methodology.stages[0].title}</Subtitle>
-        <TextCard>{data.methodology.stages[0].text}</TextCard>
       </Card>
-      <Card>
+      <TextCard style={{ textAlign: "right" }} display={!estrategiaVisivility}>
+        <p>{data.methodology.stages[1].text}</p>
+      </TextCard>
+      <Card
+        onMouseEnter={() => showInfo("estrategia")}
+        onMouseLeave={() => showInfo("estrategia")}
+        display={analisisVisivility}
+      >
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[1].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Pieza de ajedrez mostrando estrategia"
         />
         <Subtitle>{data.methodology.stages[1].title}</Subtitle>
-        <TextCard>{data.methodology.stages[1].text}</TextCard>
       </Card>
-      <Card>
+      <TextCard style={{ textAlign: "left" }} display={!analisisVisivility}>
+        <p>{data.methodology.stages[0].text}</p>
+      </TextCard>
+      <Card
+        onMouseEnter={() => showInfo("desarrollo")}
+        onMouseLeave={() => showInfo("desarrollo")}
+        display={produccionVisivility}
+      >
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[2].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Lapiz y una bombilla"
         />
         <Subtitle>{data.methodology.stages[2].title}</Subtitle>
-        <TextCard>{data.methodology.stages[2].text}</TextCard>
       </Card>
-      <Card>
+      <TextCard style={{ textAlign: "right" }} display={!produccionVisivility}>
+        <p>{data.methodology.stages[3].text}</p>
+      </TextCard>
+      <Card
+        onMouseEnter={() => showInfo("produccion")}
+        onMouseLeave={() => showInfo("produccion")}
+        display={desarrolloVisivility}
+      >
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[3].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Cinta de producción con paquetes y brazo mecánico"
         />
         <Subtitle>{data.methodology.stages[3].title}</Subtitle>
-        <TextCard>{data.methodology.stages[3].text}</TextCard>
       </Card>
-      <Card>
+      <TextCard style={{ textAlign: "left" }} display={!desarrolloVisivility}>
+        <p>{data.methodology.stages[2].text}</p>
+      </TextCard>
+      <Card
+        onMouseEnter={() => showInfo("lanzamiento")}
+        onMouseLeave={() => showInfo("lanzamiento")}
+        display={seguimientoVisivility}
+      >
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[4].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Coete espacial"
         />
         <Subtitle>{data.methodology.stages[4].title}</Subtitle>
-        <TextCard>{data.methodology.stages[4].text}</TextCard>
       </Card>
-      <Card>
+      <TextCard style={{ textAlign: "right" }} display={!seguimientoVisivility}>
+        <p>{data.methodology.stages[5].text}</p>
+      </TextCard>
+      <Card
+        onMouseEnter={() => showInfo("seguimiento")}
+        onMouseLeave={() => showInfo("seguimiento")}
+        display={lanzamientoVisivility}
+      >
         <Img
           style={{ width: "100px", height: "auto", overflow: "inherit" }}
           fluid={query.processImg.nodes[5].childImageSharp.fluid}
-          alt="Medio Lleno logo"
+          alt="Lupa y gráficos"
         />
         <Subtitle>{data.methodology.stages[5].title}</Subtitle>
-        <TextCard>{data.methodology.stages[5].text}</TextCard>
       </Card>
+      <TextCard style={{ textAlign: "left" }} display={!lanzamientoVisivility}>
+        <p>{data.methodology.stages[4].text}</p>
+      </TextCard>
     </CardsContainer>
   )
 }

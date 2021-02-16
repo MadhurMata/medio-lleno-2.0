@@ -28,7 +28,7 @@ export default function Model() {
     <Container>
       <Title name={"model"}>{title}</Title>
       <Img
-        style={{ width: "300px", height: "auto", overflow: "inherit", marginBottom: "1rem" }}
+        style={{ width: "300px", height: "auto", overflow: "inherit", marginBottom: "2rem" }}
         fluid={query.modelImg.nodes[0].childImageSharp.fluid}
         alt=" Gráfico del modelo de atracción central"
       />
